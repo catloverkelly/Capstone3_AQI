@@ -29,3 +29,18 @@ We converted the Date column to a datetime object, and cleaned up some of the ti
 Exploratory data analysis concludes the following: 
 * The west coast, especially California, is more prone to extreme AQI values.
 * The cleanest cities seem to have small populations and are not from California.
+
+
+### Modelling
+We converted the data from daily to monthly via resampling with the median. Then, we dropped all columns except for Date and AQI.
+<br>
+We fit the data into 3 models (SARIMA, Facebook Prophet, and LSTM) and then measured performance based on the lowest RMSE scores.
+
+| Model | RMSE score |
+|------:|------------|
+|SARIMA | 4.056 |
+|Prophet| 2.578 |
+|LSTM | 4.087 |
+
+### Conclusions
+Facebook Prophet is the best model to use for this dataset; however, as shown in the report and Jupyter notebooks, all models failed to accurately forecast the last datapoint, suggesting unforeseen events. 
